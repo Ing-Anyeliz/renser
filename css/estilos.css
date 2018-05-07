@@ -61,9 +61,7 @@ i:hover {
   color: #09f;
 }
 
-/*
-These are for div positioning
-*/
+
 
 header {
   width: 100%;
@@ -166,7 +164,6 @@ div#banners.smaller {
 }
 
 
-/* Below is the code for a three column structure without Bootstrap */
 
 .main {
   width: 80%;
@@ -178,7 +175,6 @@ div#banners.smaller {
   text-align: center;
 }
 
-/* Main is a container set to 80% width */
 
 .col-left {
   width: 33%;
@@ -187,7 +183,6 @@ div#banners.smaller {
 }
 
 
-/* column widths are set to 33% of the Main div. this adds up to 99% of the Main div width but noone can tell there is a remaining 1%. */
 
 .col-center {
   width: 33%;
@@ -212,27 +207,17 @@ footer li {
 }
 
 
-/*
-These are utility classes to make things easy peazy.
-*/
 
 .ban {
   clear: both;
 }
 
 
-/* clearfix clears floats. i place the in an empty div under any other divs with floating elements */
-
 .central {
   text-align: center;
 }
 
 
-/* this can be used over and over again to center align elements in a div */
-
 .p-padding {
   padding: 30px;
 }
-
-
-/* I created this to get a uniform padding around the <p> tags in ly columns */
