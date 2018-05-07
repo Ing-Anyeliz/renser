@@ -1,28 +1,35 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimum-scale=1.0" >
     <!--fuente 'Merriweather Sans'-->
-    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="css/stilos.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    <script src="js/script.js"></script>
 
     <title>renser</title>
+
   </head>
   <body>
-  <div class="container">
-    <div class="logo">
-      <img src="image/logo_rc.png" alt="logo1">
-    </div>
-    <div class="contenido">
-      <nav>
-        <ul>
-          <li><a href="#">INICIO</a></li>
-          <li><a href="#">ACERCA DE NOSOTROS</a></li>
-          <li><a href="#">CONTACTO</a></li>
-        </ul>
-      </nav>
-    </div>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <img src="image/logo_rc.png" alt="logo1">
+        </div>
+        <div class="contenido">
+          <nav>
+            <ul>
+              <li><a href="#">INICIO</a></li>
+              <li><a href="#">ACERCA DE NOSOTROS</a></li>
+              <li><a href="#">CONTÁCTANOS</a></li>
+            </ul>
+          </nav>
+        </div>
+        </div>
+    </header>
+
     <div class="ban"></div>
     <div id="banners" class="central">
       <div class="line">
@@ -30,81 +37,12 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
       </div>
     </div>
-  </div>
+  
+    <footer>
+      <div class="social">
+
+      </div>
+    </footer>
+
   </body>
 </html>
-
-
-<!--
-<body>
-  <header>
-    <div class="container">
-      <div class="logo">
-        <h1 id="logo">BannerDivs.</h1>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-  <div class="clearfix"></div>
-  <div id="banner" class="center">
-    <div class="headline">
-      <h2>Headline</h2>
-      <p>Squid banjo street art, master cleanse meditation food truck mumblecore 8-bit. </p>
-    </div>
-  </div>
-  <div class="main">
-    <div class="copy">
-      <h3>Need more filler Here.</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur fringilla, risus porttitor posuere rutrum, diam arcu dignissim nulla, eget dictum lorem libero ut leo. Aliquam massa quam, facilisis non porta vitae, blandit vitae leo. Pellentesque congue tristique risus, id consequat eros sollicitudin sed. Vestibulum laoreet magna at lacus pulvinar, elementum dictum leo placerat. Quisque vitae luctus risus. Donec dapibus velit at purus elementum cursus. Mauris condimentum mauris id ligula pharetra, id tempus quam finibus.</p>
-      <br>
-      <p>Vivamus vestibulum efficitur leo sed ultrices. Donec iaculis purus sed ex scelerisque commodo. Fusce efficitur luctus est fringilla sagittis. Proin sed massa bibendum, imperdiet urna ac, finibus erat. Nunc libero leo, molestie at est at, sodales accumsan nulla. Aliquam at dolor ullamcorper, dapibus quam vitae, blandit ipsum. In magna neque, luctus in pulvinar vel, ultricies non justo.
-</p>
-    </div>
-    <div class="col-left">
-      <h3 class="center">Column 1</h2>
-      <p class="p-padding">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur fringilla, risus porttitor posuere rutrum, diam arcu dignissim nulla, eget dictum lorem libero ut leo. Aliquam massa quam, facilisis non porta vitae, blandit vitae leo. Pellentesque
-        congue tristique risus, id consequat eros sollicitudin sed. Vestibulum laoreet magna at lacus pulvinar, elementum dictum leo placerat. </p>
-    </div>
-    <div class="col-center">
-      <h3 class="center">Column 2</h2>
-      <p class="p-padding">Vivamus vestibulum efficitur leo sed ultrices. Donec iaculis purus sed ex scelerisque commodo. Fusce efficitur luctus est fringilla sagittis. Proin sed massa bibendum, imperdiet urna ac, finibus erat. Nunc libero leo, molestie at est at, sodales
-        accumsan nulla. Aliquam at dolor ullamcorper, dapibus quam vitae, blandit ipsum. In magna neque, luctus in pulvinar vel, ultricies non justo.
-      </p>
-    </div>
-    <div class="col-right">
-      <h3 class="center">Column 3</h2>
-      <p class="p-padding">Praesent bibendum ante nec congue interdum. Aenean nec enim in urna sagittis elementum sed eget neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus non faucibus magna. Maecenas ipsum magna,
-        dignissim sed imperdiet et, placerat facilisis ex. </p>
-    </div>
-    <div class="clearfix"></div>
-  </div>
-  <footer>
-     I've used Font Awesome's icons to get these social icons here. You can download the packages from:
-
-    http://fontawesome.io/
-
-    To include this, go to Settings and under the HTML tab paste the script into the 'Stuff for Head' Section. Check their site for documentation on what classes to use to call these.
-
-    <div class="social">
-      <br>
-      <ul class="center">
-        <li>
-          <a href="#"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a>
-        </li>
-        <li>
-          <a href="#"><i class="fa fa-google-plus fa-2x" aria-hidden="true"></i></a>
-        </li>
-        <li>
-          <a href="#"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
-        </li>
-      </ul>
-    </div>
-  </footer>
-</body>
--->
