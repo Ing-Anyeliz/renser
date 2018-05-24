@@ -1,48 +1,1184 @@
+
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <title>RENSER</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <meta content="" name="description" />
+  <meta content="Anyeliz" name="author" />
+  <!--Fuente utilizada-->
+  <link href="http://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet" type="text/css">
+  <!--<link href="http://banadergulf.net/123/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css" />
+  -->
+  <!--BOOTSTRAP.MIN-->
+ <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <!--ESTILOS CSS-->
+  <link rel="stylesheet" href="css/bootstrap.min.css.map">
+  <link rel="stylesheet" href="css/estilos.css">
+  <!-- PAGINAS PLUGINS ANIMATE SWIPER MAGNIFIC -->
+  <link href="http://banadergulf.net/123/css/animate.css" rel="stylesheet">
+  <link href="http://banadergulf.net/123/vendor/swiper/css/swiper.min.css" rel="stylesheet" type="text/css" />
+  <link href="http://banadergulf.net/123/vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css" />
 
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimum-scale=1.0" >
-    <!--fuente 'Merriweather Sans'-->
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="css/estilos.css">
-    <script src="js/script.js"></script>
+  <!-- TEMAS EN Bootstrap -->
+  <!--<link href="http://banadergulf.net/123/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />-->
 
-    <title>renser</title>
+  <!-- Favicon -->
+<!--  <link rel="shortcut icon" href="favicon.ico" /> -->
+  <!-- ESTILOS PLUGINS -->
+  <link rel="stylesheet" href="http://banadergulf.net/123/css/themify-icons.css">
+  <!-- FONT-AWESOME-->
+  <link rel="stylesheet" href="http://banadergulf.net/123/css/font-awesome.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-  </head>
-  <body>
-    <header>
+
+<script>
+// mi filtro inicio
+$(document).ready(function(){
+
+    $(".filter-button").click(function(){
+        var value = $(this).attr('data-filter');
+
+        if(value == "all")
+        {
+
+            $('.filter').show('1000');
+        }
+        else
+        {
+
+            $(".filter").not('.'+value).hide('3000');
+            $('.filter').filter('.'+value).show('3000');
+
+        }
+    });
+
+    if ($(".filter-button").removeClass("active")) {
+            $(this).removeClass("active");
+        }
+            $(this).addClass("active");
+
+    });
+
+//end de mi filtro inicio
+    var Layout = function () {
+
+    // detector de movil
+    var isMobileDevice = function() {
+        return  ((
+            navigator.userAgent.match(/Android/i) ||
+            navigator.userAgent.match(/BlackBerry/i) ||
+            navigator.userAgent.match(/iPhone|iPad|iPod/i) ||
+            navigator.userAgent.match(/Opera Mini/i) ||
+            navigator.userAgent.match(/IEMobile/i)
+        ) ? true : false);
+    }
+
+    // para uso del scroll
+    var handleHeaderOnScroll = function() {
+        if ($(window).scrollTop() > 60) {
+            $("body").addClass("page-on-scroll");
+        } else {
+            $("body").removeClass("page-on-scroll");
+        }
+    }
+
+    // Handle Header
+    var handleOnePageHeader = function() {
+        // jQuery navbar
+        if ($('.navbar').offset().top > 150) {
+            $('.navbar-fixed-top').addClass('top-nav-collapse');
+        }
+        $(window).scroll(function() {
+            if ($('.navbar').offset().top > 150) {
+                $('.navbar-fixed-top').addClass('top-nav-collapse');
+            } else {
+                $('.navbar-fixed-top').removeClass('top-nav-collapse');
+            }
+        });
+
+        var $offset = 0;
+        $offset = $(".navbar-fixed-top").height()-20;
+
+        // jQuery para el derrumbar el scroll este requiere de jQuery Easing plugin
+        $('.js_nav-item a').bind('click', function(event) {
+            var $position = $($(this).attr('href')).offset().top;
+            $('html, body').stop().animate({
+                scrollTop: $position - $offset
+            }, 600);
+            event.preventDefault();
+        });
+
+        var $scrollspy = $('body').scrollspy({target: '.navbar-fixed-top', offset: $offset+2});
+        // navbar derrumbar cuando cliquemos
+        $(window).scroll(function() {
+            $('.navbar-collapse.in').collapse('hide');
+        });
+    }
+
+    // carousel
+    var handleCarousel = function() {
+        var $item = $('.carousel .item');
+        var $wHeight = $(window).height();
+        $item.eq(0).addClass('active');
+        $item.height($wHeight);
+        $item.addClass('full-screen');
+
+        $('.carousel img').each(function() {
+            var $src = $(this).attr('src');
+            var $color = $(this).attr('data-color');
+            $(this).parent().css({
+                'background-image' : 'url(' + $src + ')',
+                'background-color' : $color
+            });
+            $(this).remove();
+        });
+
+        $(window).on('resize', function (){
+            $wHeight = $(window).height();
+            $item.height($wHeight);
+        });
+    }
+
+    // modificacion del elemento height
+    var handleHeight = function() {
+       $('[data-auto-height]').each(function() {
+            var parent = $(this);
+            var items = $('[data-height]', parent);
+            var height = 0;
+            var mode = parent.attr('data-mode');
+            var offset = parseInt(parent.attr('data-offset') ? parent.attr('data-offset') : 0);
+
+            items.each(function() {
+                if ($(this).attr('data-height') == "height") {
+                    $(this).css('height', '');
+                } else {
+                    $(this).css('min-height', '');
+                }
+
+                var height_ = (mode == 'base-height' ? $(this).outerHeight() : $(this).outerHeight(true));
+                if (height_ > height) {
+                    height = height_;
+                }
+            });
+
+            height = height + offset;
+
+            items.each(function() {
+                if ($(this).attr('data-height') == "height") {
+                    $(this).css('height', height);
+                } else {
+                    $(this).css('min-height', height);
+                }
+            });
+
+            if(parent.attr('data-related')) {
+                $(parent.attr('data-related')).css('height', parent.height());
+            }
+       });
+    }
+
+    // trabajo del popup
+    var handleWorkPopup = function() {
+        var overlay = $('.work-popup-overlay'),
+            close = $('.work-popup-close'),
+            trigger = $('.work-popup-trigger');
+
+        trigger.on('click', function() {
+            $(this).find('.work-popup-overlay').removeClass('work-popup-overlay-show');
+            $(this).find('.work-popup-overlay').addClass('work-popup-overlay-show');
+        });
+
+        close.on('click', function(e) {
+            e.stopPropagation();
+            overlay.removeClass('work-popup-overlay-show');
+        });
+    }
+
+    return {
+        init: function () {
+            // Reiniciar el header fijo setup
+            handleHeaderOnScroll();
+            handleOnePageHeader(); // Inicia el header initial header
+            handleCarousel(); // initial setup for carousel inicia el setup del carousel
+            handleHeight(); //inicia el setup para el grupo del elemento height
+            handleWorkPopup(); // inicia el setup del grpo de trabajo popup
+            // minimiza el header del scroll de la pagina
+            $(window).scroll(function() {
+                handleHeaderOnScroll();
+            });
+        },
+        //Obtener el viewport basado en http://andylangton.co.uk/articles/javascript/get-viewport-size-javascript/
+        // To get the correct viewport width based on  http://andylangton.co.uk/articles/javascript/get-viewport-size-javascript/
+        getViewPort: function() {
+            var e = window,
+                a = 'inner';
+            if (!('innerWidth' in window)) {
+                a = 'client';
+                e = document.documentElement || document.body;
+            }
+
+            return {
+                width: e[a + 'Width'],
+                height: e[a + 'Height']
+            };
+          },
+    };
+}();
+/inicializacion de parametros
+$(document).ready(function() {
+Layout.init();
+});
+
+
+</script>
+
+</head>
+<!-- fin del head -->
+
+<!--inicio body-->
+
+<body id="body" data-spy="scroll" data-target=".header">
+
+  <!--INICIO DE HEADER -->
+  <header class="header navbar-fixed-top">
+    <!--INICIO DEL NAVBAR atributo role para poder independizar cada elemento de la pagina-->
+    <nav class="navbar" role="navigation">
       <div class="container">
-        <div class="logo">
-          <img src="image/logo_rc.png" alt="logo1">
-        </div>
-        <div class="contenido">
-          <nav>
-            <ul>
-              <li><a href="#">INICIO</a></li>
-              <li><a href="#">ACERCA DE NOSOTROS</a></li>
-              <li><a href="#">CONTÁCTANOS</a></li>
-            </ul>
-          </nav>
-        </div>
-        </div>
-    </header>
+        <!-- Obtener el mejor display de movil-->
+        <div class="menu-container js_nav-item">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="toggle-icon"></span>
+          </button>
 
-    <div class="ban"></div>
-    <div id="banners" class="central">
-      <div class="line">
-        <h2>Encabezado</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+          <!-- Logo -->
+          <div class="logo">
+            <a class="logo-wrap" href="#body">
+              <!--LOGO DEL MENU NORMAL-->
+
+              <img class="logo-img logo-img-main" src="Renser.png" alt="Logo">
+                <!--LOGO DEL MENU DESPUES DE BAJAR EL SCROLL-->
+              <img class="logo-img logo-img-active" src="Renser.png" style="width:125px; height:75px;" alt="Logo2">
+            </a>
+          </div>
+          <!-- End Logo -->
+        </div>
+
+        <!-- Coloca los enlaces del navbar y los items del menu -->
+        <div class="collapse navbar-collapse nav-collapse">
+          <div class="menu-container">
+            <ul class="nav navbar-nav navbar-nav-right">
+              <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="#body">Inicio</a></li>
+              <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="#about">Productos</a></li>
+              <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="#service">Servicios</a></li>
+              <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="#nosotros">Nosotros</a></li>
+              <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="#contactanos">Contáctanos</a></li>
+            <!--  <li class="js_nav-item nav-item"><a class="nav-item-child nav-item-hover" href="#contact">Contáctanos</a></li>-->
+            </ul>
+          </div>
+        </div>
+        <!-- FIN DEL NAVBAR -->
+      </div>
+    </nav>
+    <!-- Navbar -->
+
+  </header>
+  <!--FIN DEL HEADER-->
+
+  <!--SLIDER -->
+<!--COLOCAR EL BANNERS INICIAL-->
+  <div class="promo-block">
+    <div class="container">
+      <div class="margin-b-20">
+        <h1 class="promo-block-title">Bienvenidos</h1>
+        <p class="promo-block-text">Nos comprometemos contigo!</p>
+      </div>
+
+        <!--PARA COLOCAR UN VIDEO EN LA PRESENTACION DEL BANNERS-->
+       <!--<a class="js_popup-youtube btn-theme btn-theme-md btn-white-bg text-uppercase" href="https://www.youtube.com/watch?v=0qisGSwZym4" title="Intro Video"><i class="btn-icon icon-control-play"></i> Watch Intro Video</a>
+    --></div>
+    <div class="header-scroll-btton smoth">
+      <!--animacion en el banner de subir y bajar scroll-->
+      <!--<a>
+        <span class="ti-arrow-down"></span></a> -->
+    </div>
+    <!-- fin del scroll -->
+  </div>
+
+  <!--Movimiento del slider-->
+
+  <!-- Presentacion-->
+
+  <!-- Productos -->
+
+<!--=============================================================================-->
+
+<!-- Productos -->
+<div id="about">
+  <div class="section-title">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+          <article class="section-title-body">
+            <h2 class="head-title">Productos</h2>
+            <p class="head-text">
+              Contamos con suministros de equipos para satisfacer las necesidades de nuestro cliente.
+            </p>
+          </article>
+        </div>
       </div>
     </div>
-  
-    <footer>
-      <div class="social">
+  </div>
+  <!--/section-title-->
+  <!-- End Divider  -->
+
+  <!-- PRODUCTOS PRIMERA FILA -->
+
+  <div class="bg-color-sky-light" data-auto-height="true">
+    <div class="content-lg container">
+      <div class="row row-space-2 margin-b-4">
+        <div class="col-sm-4 sm-margin-b-4">
+          <div class="service" data-height="height">
+            <div class="service-element">
+              <i class="service-icon icon-chemistry"></i>
+            </div>
+            <div class="service-info">
+              <h3>Detección de gases</h3>
+              <p class="margin-b-5">Detección de Gases Portatil y Fijos ...</p>
+            </div>
+            <a href="#" class="content-wrapper-link"></a>
+          </div>
+        </div>
+        <div class="col-sm-4 sm-margin-b-4">
+          <div class="service bg-color-base wow fadeInDown" data-height="height" data-wow-duration=".3" data-wow-delay=".1s">
+            <div class="service-element">
+              <i class="service-icon color-white icon-screen-tablet"></i>
+            </div>
+            <div class="service-info">
+              <h3 class="color-white">Elementos de protección personal</h3>
+              <p class="color-white margin-b-5">Trajes de protección personal tanto visual como físico...</p>
+            </div>
+            <a href="#" class="content-wrapper-link"></a>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="service" data-height="height">
+            <div class="service-element">
+              <i class="service-icon icon-badge"></i>
+            </div>
+            <div class="service-info">
+              <h3>Protección Alturas</h3>
+              <p class="margin-b-5">Sistema de rescate Sked, Arnés, Estribo de Rescate ...</p>
+            </div>
+            <a href="#" class="content-wrapper-link"></a>
+          </div>
+        </div>
+      </div>
+      <!-- FIN DE LA PRIMERA FILA-->
+
+      <div class="row row-space-2">
+        <div class="col-sm-4 sm-margin-b-4">
+          <div class="service" data-height="height">
+            <div class="service-element">
+              <i class="service-icon icon-notebook"></i>
+            </div>
+            <div class="service-info">
+              <h3>Protección Respiratoria</h3>
+              <p class="margin-b-5">Equipos de Suministro de Aire Respirable, Equipos de escape ...</p>
+            </div>
+            <a href="#" class="content-wrapper-link"></a>
+          </div>
+        </div>
+        <div class="col-sm-4 sm-margin-b-4">
+          <div class="service" data-height="height">
+            <div class="service-element">
+              <i class="service-icon icon-speedometer"></i>
+            </div>
+            <div class="service-info">
+              <h3>Equipos de Ventilación y Medición</h3>
+              <p class="margin-b-5">Equipos de ventilación para espacios confinados, Termohigrómetros para medición de humedad ...</p>
+            </div>
+            <a href="#" class="content-wrapper-link"></a>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="service" data-height="height">
+            <div class="service-element">
+              <i class="service-icon icon-badge"></i>
+            </div>
+            <div class="service-info">
+              <h3>Equipos en Extinción y Detección de Incendios</h3>
+              <p class="margin-b-5">Bombas contra incendios, soluciones en agentes limpios, Detectores de Humo y calor ...</p>
+            </div>
+            <a href="#" class="content-wrapper-link"></a>
+          </div>
+        </div>
+      </div>
+      <!-- FIN DE LA SEGUNDA FILA -->
+    </div>
+  </div>
+</div>
+<!-- Fin de Productos-->
+
+<!--=============================================================================-->
+<!-- SERVICIOS -->
+<!--<section id="portfolio" class="bg-light-gray">
+-->
+<section id= "service" class="bg-light-gray">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h1 class="section-heading">SERVICIOS</h1>
+        <hr class="dark">
+        <h3 class="section-subheading text-muted">Contamos con personal calificado y entrenado, cumpliendo con los procedimietos y parámetros recomendados.</h3>
+      </div>
+    </div>
+    <div class="row">
+      <section>
+
+      <!--  <div align="center">
+          <button class=" btn-theme-sm btn-default-bg filter-button" data-filter="all">Mantenimiento y calibración de detectores de gases</button>
+          <button class=" btn-theme-sm btn-default-bg filter-button" data-filter="graphic">Capacitación en atmósferas explosivas</button>
+          <button class=" btn-theme-sm btn-default-bg filter-button" data-filter="web">Capacitación en equipos de aire respirable</button>
+          <button class=" btn-theme-sm btn-default-bg filter-button" data-filter="photo">Servicio de Supervisión, monitoreo y alarma para atmósferas explosivas y tóxicas</button>
+          <button class=" btn-theme-sm btn-default-bg filter-button" data-filter="illus">Asesoría en montaje de Sistemas de detección de gases</button>
+        </div> -->
+        <br/>
+
+        <!-- RECUADRO 1 -->
+        <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 portfolio-item filter graphic">
+          <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+            <div class="portfolio-hover">
+              <div class="portfolio-hover-content">
+                <!--<i class="fa fa-plus fa-3x"></i> -->
+              </div>
+            </div>
+            <img href="#portfolioModal1" src="img/portfolio/dreams.png" class="img-responsive" alt="">
+          </a>
+          <div class="portfolio-caption">
+            <h4>Mantenimiento y calibración de detectores de gases</h4>
+            <!--<p class="text-muted">Graphic Design</p> -->
+          </div>
+        </div>
+        <!-- FIN DEL RECUADRO 1 -->
+        <!-- RECUADRO 2 -->
+        <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 portfolio-item filter web">
+          <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+            <div class="portfolio-hover">
+              <div class="portfolio-hover-content">
+                <!-- <i class="fa fa-plus fa-3x"></i> -->
+              </div>
+            </div>
+          <!--  <img href="#portfolioModal1" src="image/logo_rc1.png" class="img-responsive" alt="gfhdgfd"> -->
+          </a>
+          <div class="portfolio-caption">
+            <h4>Capacitación en atmósferas explosivas </h4>
+          </br>
+          <!--<p class="text-muted">Graphic Design</p> -->
+          </div>
+        </div>
+        <!-- end of Portfolio image 2 -->
+        <!-- Portfolio image 3 -->
+        <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 portfolio-item filter photo">
+          <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+            <div class="portfolio-hover">
+              <div class="portfolio-hover-content">
+                <!--<i class="fa fa-plus fa-3x"></i> -->
+              </div>
+            </div>
+            <img href="#portfolioModal1" src="img/portfolio/golden.png" class="img-responsive" alt="">
+          </a>
+          <div class="portfolio-caption">
+          </br>
+            <h4>Asesoría y acompañamiento en seguridad industrial</h4>
+            <p class="text-muted"></p>
+          </div>
+        </div>
+        <!-- end of Portfolio image 3 -->
+        <!-- Portfolio image 4 -->
+        <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 portfolio-item filter illus">
+          <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+            <div class="portfolio-hover">
+              <div class="portfolio-hover-content">
+              <!--  <i class="fa fa-plus fa-3x"></i> -->
+              </div>
+            </div>
+            <img href="#portfolioModal4" src="img/portfolio/roundicons.png" class="img-responsive" alt="">
+          </a>
+          <div class="portfolio-caption">
+            <h4>Capacitación en equipos de aire respirable</h4>
+            <p class="text-muted"></p>
+          </div>
+        </div>
+        <!-- end of Portfolio image 4 -->
+        <!-- Portfolio image 5 -->
+        <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 portfolio-item filter graphic">
+          <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+            <div class="portfolio-hover">
+              <div class="portfolio-hover-content">
+                <!---<i class="fa fa-plus fa-3x"></i> -->
+              </div>
+            </div>
+
+            <img href="#portfolioModal5" src="img/portfolio/startup-framework.png" class="img-responsive" alt="">
+          </a>
+          <div class="portfolio-caption">
+            <h4>Servicio de Supervisión, monitoreo y alarma para atmósferas explosivas y tóxicas</h4>
+          <!--  <p class="text-muted">Graphic Design</p> -->
+          </div>
+        </div>
+        <!-- end of Portfolio image 5 -->
+        <!-- Portfolio image 6 -->
+        <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 portfolio-item filter graphic">
+          <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+            <div class="portfolio-hover">
+              <div class="portfolio-hover-content">
+                <!--<i class="fa fa-plus fa-3x"></i> -->
+              </div>
+            </div>
+            <img href="#portfolioModal6" src="img/portfolio/treehouse.png" class="img-responsive" alt="">
+          </a>
+          <div class="portfolio-caption">
+            <h4>Asesoría en montaje de Sistemas de detección de gases</h4>
+            <!--<p class="text-muted">Graphic Design</p>-->
+          </div>
+        </div>
+        <!-- end of Portfolio image 6 -->
+
+    </div>
+  </div>
+
+  </section>
+ </section>
+
+
+<!--=============================================================================-->
+<!--<div id="portfolio"> -->
+<div id="nosotros">
+  <div class="container content-lg">
+    <div class="row text-center margin-b-10">
+      <div class="">
+        <h1>Nosotros</h1>
+        <hr class="dark">
+        <h3> Somos una empresa especializada en suministros e instalaciones de soluciones en detección de gases tóxicos/explosivos y control-extinción de incendios. Comercializamos equipos de seguridad industrial en lineas como suministro de alturas, elementos de protección personal, higiene y protección ambiental.</h3>
 
       </div>
-    </footer>
+    </div>
+    <!--// fin de la primera fila-->
 
-  </body>
+      <!-- compromiso que ofrecemos -->
+      <div id="products">
+
+<!--Que ofrecemos: Servicios de calibración, alquiler, así como capacitación y provisión de personal certificado a nivel internacional, especialmente para diagnostico en ambientes con riesgo de exposición de ácido sulfhídrico (h2s)-->
+<!-- Compromiso: Comprometidos con la seguridad y la salud del trabajo para todos los colaboradores en las instalaciones propias y de nuestros clientes. Renser Colombia cuenta con las certificaciones bajo la norma OHSAS 18001:2007 y calificación RUC con puntaje de 88% lo que evidencia nuestro compromiso con el bienestar de todas las partes interesadas.-->
+
+        <div class="row">
+          <!-- Latest Products -->
+          <div class="col-sm-4 sm-margin-b-50">
+            <!-- <div class="margin-b-20">
+              <img class="img-responsive wow fadeIn" src="img/970x647/01.jpg" alt="Latest Products Image" data-wow-duration=".3" data-wow-delay=".1s">
+            </div> -->
+            <h4 class="text-center"><a>Misión</a> <span class="text-uppercase margin-l-20"></h4>
+            <p>Prestamos servicios de excelente calidad en el área de seguridad industrial, contamos con personal altamente calificado y comprometido a entender y sastifacer las necesidades de nuestro clientes, asegurando el crecimiento constante de la empresa con la máxima eficiencia y competitividad en el mercado.</p>
+
+          </div>
+          <!-- End Latest Products -->
+
+          <!-- Latest Products -->
+          <div class="col-sm-4 sm-margin-b-50">
+            <!--<div class="margin-b-20">
+              <img class="img-responsive wow fadeIn" src="img/970x647/02.jpg" alt="Latest Products Image" data-wow-duration=".3" data-wow-delay=".2s">
+            </div> -->
+            <h4 class="text-center"><a>Visión</a> <span class="text-uppercase margin-l-20"></h4>
+            <p>Ser en el 2014 lideres en el mercado nacional y ubicarnos en el mercado nacional y ubicarnos en mercados internacionales con el fin de generar retornos excepcionales para nuestros accionstas y colaboradores, siendo la calidad de servicio y el cumplimiento de los compromisos adquiridos con nuestros clientes loq ue nos distingua en nuestra actividad.</p>
+
+          </div>
+          <!-- End Latest Products -->
+
+          <!-- Latest Products -->
+          <div class="col-sm-4 sm-margin-b-50">
+            <!--<div class="margin-b-20">
+              <img class="img-responsive wow fadeIn" src="img/970x647/03.jpg" alt="Latest Products Image" data-wow-duration=".3" data-wow-delay=".3s">
+            </div> -->
+            <h4 class="text-center"><a>Valores</a> <span class="text-uppercase margin-l-20"></h4>
+                <ul class="itemli">
+                  <li><p>Respeto</p></li>
+                  <li><p>Responsabilidad</p></li>
+                  <li><p>Humanísmo</p></li>
+                  <li><p>Política de Calidad</p></li>
+                  <li><p>Mística y dedicación</p></li>
+
+                </ul>
+
+
+          </div>
+          <!-- FIN DE LOS SERVICIOS EN EL CONTENEDOR -->
+        </div>
+        <!-- FIN DE LAS SEGUNDA FILA -->
+      </div>
+
+
+      <!--// FIN DE LAS FILAS -->
+    </div>
+  </div>
+  <!--===========================================================================================================================-->
+  <!-- FIN DE SERVICIOS -->
+  <!-- Divider  -->
+  <!-- 1 <div id="">
+    <div class="section-title">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+            <article class="section-title-body">
+              <h2 class="head-title">Services</h2>
+              <p class="head-text">
+                Let's dive in to the categories in which I can help you.
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div> 1-->
+    <!--/section-title-->
+    <!-- End Divider  -->
+
+    <!-- Service -->
+
+  <!--2  <div class="bg-color-sky-light" data-auto-height="true">
+      <div class="content-lg container">
+        <div class="row row-space-2 margin-b-4">
+          <div class="col-sm-4 sm-margin-b-4">
+            <div class="service" data-height="height">
+              <div class="service-element">
+                <i class="service-icon icon-chemistry"></i>
+              </div>
+              <div class="service-info">
+                <h3>Art Of Coding</h3>
+                <p class="margin-b-5">Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>
+              </div>
+              <a href="#" class="content-wrapper-link"></a>
+            </div>
+          </div>
+          <div class="col-sm-4 sm-margin-b-4">
+            <div class="service bg-color-base wow fadeInDown" data-height="height" data-wow-duration=".3" data-wow-delay=".1s">
+              <div class="service-element">
+                <i class="service-icon color-white icon-screen-tablet"></i>
+              </div>
+              <div class="service-info">
+                <h3 class="color-white">Responsive Design</h3>
+                <p class="color-white margin-b-5">Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>
+              </div>
+              <a href="#" class="content-wrapper-link"></a>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="service" data-height="height">
+              <div class="service-element">
+                <i class="service-icon icon-badge"></i>
+              </div>
+              <div class="service-info">
+                <h3>Feature Reach</h3>
+                <p class="margin-b-5">Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>
+              </div>
+              <a href="#" class="content-wrapper-link"></a>
+            </div>
+          </div>
+        </div> 2-->
+        <!--// end row -->
+
+      <!--3  <div class="row row-space-2">
+          <div class="col-sm-4 sm-margin-b-4">
+            <div class="service" data-height="height">
+              <div class="service-element">
+                <i class="service-icon icon-notebook"></i>
+              </div>
+              <div class="service-info">
+                <h3>Graphic Design</h3>
+                <p class="margin-b-5">Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>
+              </div>
+              <a href="#" class="content-wrapper-link"></a>
+            </div>
+          </div>
+          <div class="col-sm-4 sm-margin-b-4">
+            <div class="service" data-height="height">
+              <div class="service-element">
+                <i class="service-icon icon-speedometer"></i>
+              </div>
+              <div class="service-info">
+                <h3>Fast Delivery</h3>
+                <p class="margin-b-5">Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>
+              </div>
+              <a href="#" class="content-wrapper-link"></a>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="service" data-height="height">
+              <div class="service-element">
+                <i class="service-icon icon-badge"></i>
+              </div>
+              <div class="service-info">
+                <h3>Print Design</h3>
+                <p class="margin-b-5">Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>
+              </div>
+              <a href="#" class="content-wrapper-link"></a>
+            </div>
+          </div>
+        </div> 3-->
+        <!--// end row -->
+    <!--4  </div>
+    </div>
+  </div> 4-->
+  <!-- End Service -->
+
+  <!-- BANNER INDEPENDIENTE -->
+  <div class="promo-banner">
+    <div class="container-sm content-lg">
+      <h2 class="promo-banner-title">Objetivos Corporativos</h2>
+    <!--  <p class="promo-banner-text">Sobrepasar las expectativas de nuestros clientes, detectando sus necesidades y ofreciendo soluciones de última generación como acompañamientos en la adaptación a los constantes cambios del entorno tecnológico industrial.</p>
+      <p class="promo-banner-text">Disponer del profesional altamente calificado, satisfecho y motivado que aporta su conocimiento y calidad humana, asegurando consultoría efectiva con valor agregado.</p>
+      <p class="promo-banner-text">Operar activamente en el bienestar de la comunidad, así como en asegurar un ambiente económico social y ambiental sostenible para alcanzar nuestros objetivos a mediano plazo.</p>
+      <p class="promo-banner-text">Aplicar sistemas de gestión que garanticen la mejora contínua de los procesos con innovación y trabajo en equipo.</p>
+      <p class="promo-banner-text">Asegurar con efectividad el rendimiento del capital.</p>
+      <p class="promo-banner-text">Expander nuestro posicionamiento nacional e internacional, asegurándonos de ser la mejor opción para el cliente.</p>
+    --><ul>
+    <br>
+        <li class="promo-banner-text">Sobrepasar las expectativas de nuestros clientes, detectando sus necesidades y ofreciendo soluciones de última generación como acompañamientos en la adaptación a los constantes cambios del entorno tecnológico industrial.</li>
+        <li class="promo-banner-text">Disponer del profesional altamente calificado, satisfecho y motivado que aporta su conocimiento y calidad humana, asegurando consultoría efectiva con valor agregado.</li>
+        <li class="promo-banner-text">Operar activamente en el bienestar de la comunidad, así como en asegurar un ambiente económico social y ambiental sostenible para alcanzar nuestros objetivos a mediano plazo.</li>
+        <li class="promo-banner-text">Aplicar sistemas de gestión que garanticen la mejora contínua de los procesos con innovación y trabajo en equipo.</li>
+        <li class="promo-banner-text">Asegurar con efectividad el rendimiento del capital.</li>
+        <li class="promo-banner-text">Expander nuestro posicionamiento nacional e internacional, asegurándonos de ser la mejor opción para el cliente.</li>
+      </ul>
+    </div>
+  </div>
+<!--================================================================================================================-->
+  <!-- FIN DE MI BANNER INDEPENDIENTE -->
+
+    <!-- Portfolio section -->
+
+    <!-- End of portfolio section -->
+    <!-- resume  -->
+
+  <!-- 1  <div id="resume">
+      <div class="section-title">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+              <article class="section-title-body">
+                <h1 class="head-title">Testimonials</h1>
+                <p class="head-text">
+                  what clients says about me
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div> 1-->
+      <!--/end of section-title-->
+
+
+      <!-- End Pricing -->
+  <!-- 2  </div>
+  </div> 2-->
+    <!--// end row -->
+    <!--3</div>
+    </div>
+  </div> 3-->
+    <!-- End Pricing -->
+
+    <!-- Testimonials -->
+  <!--1 <div class="content-md container">
+      <div class="row">
+        <div class="col-sm-9">
+          <h2>Customer Reviews</h2> 1-->
+
+          <!-- Swiper Testimonials -->
+        <!--2  <div class="swiper-slider swiper-testimonials"> 2-->
+            <!-- Swiper Wrapper -->
+          <!--3  <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <blockquote class="blockquote">
+                  <div class="margin-b-20">
+                    Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incididunt ut laboret dolore magna aliqua. Ut enim minim veniam exercitation laboris ut siad consequat siad minim enum esqudiat dolore.
+                  </div>
+                  <div class="margin-b-20">
+                    Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incididunt ut laboret tempor incididunt dolore magna consequat siad minim aliqua.
+                  </div>
+                  <p><span class="fweight-700 color-link">Joh Milner</span>, Metronic Customer</p>
+                </blockquote>
+              </div>
+              <div class="swiper-slide">
+                <blockquote class="blockquote">
+                  <div class="margin-b-20">
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  </div>
+                  <div class="margin-b-20">
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </div>
+                  <p><span class="fweight-700 color-link">Alex Clarson</span>, Metronic Customer</p>
+                </blockquote>
+              </div>
+            </div> 3-->
+            <!-- End Swiper Wrapper -->
+
+            <!-- Pagination -->
+          <!-- 4 <div class="swiper-testimonials-pagination"></div>
+          </div> 4-->
+          <!-- End Swiper Testimonials -->
+        <!--5</div> 5-->
+    <!--6  </div> 6-->
+      <!--// end row -->
+    <!-- 7 </div> 7-->
+    <!-- End Testimonials -->
+
+    <!-- Contact -->
+    <!--8 <div id="contact"> 8-->
+      <!-- resume  -->
+
+    <div id="contactanos">
+      <div class="section-title">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+              <article class="section-title-body">
+                <h1 class="head-title">Contáctanos</h1>
+                <p class="head-text">
+                   <!--subtitulo mensaje para contactanos-->
+               </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--/end of section-title-->
+      <!-- contact form -->
+    <!--  <section id="last">-->
+
+      <section class="bg-light-gray">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+            <!--  <h2 class="margin-top-0 wow fadeIn">mensaje</h2>-->
+              <hr class="primary">
+              <p>Te responderemos lo más pronto posible</p>
+            </div>
+            <div class="col-lg-10 col-lg-offset-1 text-center">
+              <form class="contact-form row">
+                <div class="col-md-4">
+                  <label></label>
+                  <input type="text" class="form-control" placeholder="Nombre">
+                </div>
+                <div class="col-md-4">
+                  <label></label>
+                  <input type="text" class="form-control" placeholder="Correo Electrónico">
+                </div>
+                <div class="col-md-4">
+                  <label></label>
+                  <input type="text" class="form-control" placeholder="Teléfono">
+                </div>
+                <div class="col-md-12">
+                  <label></label>
+                  <textarea class="form-control" rows="9" placeholder="Escriba aquí ..."></textarea>
+                </div>
+                <div class="col-md-4 col-md-offset-4">
+                  <label></label>
+                  <button type="button" data-toggle="modal" data-target="#alertModal" class="btn btn-primary btn-block btn-lg">Enviar<i class="ion-android-arrow-forward"></i></button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End contact form -->
+    </div>
+    <!-- End Contact -->
+    <!--========== END PAGE LAYOUT ==========-->
+
+    <!--========== FOOTER ==========-->
+    <footer class="footer">
+      <!-- Links -->
+      <div class="section-seperator">
+        <div class="content-md container">
+          <div class="row">
+
+            <div class="col-sm-2 sm-margin-b-30">
+              <!-- List -->
+            <!--  <ul class="list-unstyled footer-list">
+                <li class="footer-list-item"><a href="#">Home</a></li>
+                <li class="footer-list-item"><a href="#">About</a></li>
+                <li class="footer-list-item"><a href="#">Work</a></li>
+                <li class="footer-list-item"><a href="#">Contact</a></li>
+              </ul> -->
+              <!-- End List -->
+            </div>
+            <div class="col-sm-2 sm-margin-b-30">
+              <!-- List -->
+            <!--  <ul class="list-unstyled footer-list">
+                <li class="footer-list-item"><a href="#">Twitter</a></li>
+                <li class="footer-list-item"><a href="#">Facebook</a></li>
+                <li class="footer-list-item"><a href="#">Instagram</a></li>
+                <li class="footer-list-item"><a href="#">YouTube</a></li>
+              </ul> -->
+              <!-- End List -->
+            </div>
+            <div class="col-sm-3">
+              <!-- List -->
+            <!--  <ul class="list-unstyled footer-list">
+                <li class="footer-list-item"><a href="#">Subscribe to Our Newsletter</a></li>
+                <li class="footer-list-item"><a href="#">Privacy Policy</a></li>
+                <li class="footer-list-item"><a href="#">Terms &amp; Conditions</a></li>
+              </ul> -->
+              <!-- End List -->
+            </div>
+          </div>
+          <!--// end row -->
+        </div>
+      </div>
+      <!-- End Links -->
+
+      <!-- Copyright -->
+      <div class="content container">
+        <div class="row">
+        <!--  <div class="col-xs-6">
+            <img class="footer-logo" src="img/tnlogo1.png" alt="">
+          </div> -->
+          <div class="col-xs-6 text-right">
+            <!--<p class="margin-b-0">
+              <a class="fweight-700" href=""></a><a class="fweight-700" href="">copy right tndevelopment</a></p>-->
+          </div>
+        </div>
+
+      </div>
+      <!-- End Copyright -->
+    </footer>
+    <!--========== END FOOTER ==========-->
+
+    <!-- Portfolio Modals -->
+
+    <!-- Portfolio Modals -->
+    <!-- Use the modals below to showcase details about your portfolio projects! -->
+
+    <!-- Portfolio Modal 1 -->
+     <!-- 1<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+              <div class="rl">
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 col-lg-offset-2">
+                <div class="modal-body"> 1-->
+                  <!-- Project Details Go Here -->
+                <!--2  <h2>Project Name</h2>
+                  <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                  <img class="img-responsive img-centered" src="img/portfolio/roundicons-free.png" alt="">
+                  <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores
+                    repudiandae, nostrum, reiciendis facere nemo!</p>
+                  <p>
+                    <strong>Want these icons in this portfolio item sample?</strong>You can download 60 of them for free, courtesy of <a href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">RoundIcons.com</a>, or you can purchase the 1500
+                    icon set <a href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">here</a>.</p>
+                  <ul class="list-inline">
+                    <li>Date: July 2014</li>
+                    <li>Client: Round Icons</li>
+                    <li>Category: Graphic Design</li>
+                  </ul>
+                  <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 2-->
+
+    <!-- Portfolio Modal 2 -->
+  <!--1  <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+              <div class="rl">
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 col-lg-offset-2">
+                <div class="modal-body">
+                  <h2>Project Heading</h2>
+                  <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                  <img class="img-responsive img-centered" src="img/portfolio/startup-framework-preview.png" alt="">
+                  <p><a href="http://designmodo.com/startup/?u=787">Startup Framework</a> is a website builder for professionals. Startup Framework contains components and complex blocks (PSD+HTML Bootstrap themes and templates) which can easily be integrated
+                    into almost any design. All of these components are made in the same style, and can easily be integrated into projects, allowing you to create hundreds of solutions for your future projects.</p>
+                  <p>You can preview Startup Framework <a href="http://designmodo.com/startup/?u=787">here</a>.</p>
+                  <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 1-->
+
+    <!-- Portfolio Modal 3 -->
+  <!--2  <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+              <div class="rl">
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 col-lg-offset-2">
+                <div class="modal-body"> 2-->
+                  <!-- Project Details Go Here -->
+                <!--1  <h2>Project Name</h2>
+                  <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                  <img class="img-responsive img-centered" src="img/portfolio/treehouse-preview.png" alt="">
+                  <p>Treehouse is a free PSD web template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. This is bright and spacious design perfect for people or startup companies looking to showcase their apps or other projects.</p>
+                  <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/treehouse-free-psd-web-template/">FreebiesXpress.com</a>.</p>
+                  <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 1-->
+
+    <!-- Portfolio Modal 4 -->
+  <!--1  <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+              <div class="rl">
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 col-lg-offset-2">
+                <div class="modal-body"> 1-->
+                  <!-- Project Details Go Here -->
+                <!--2  <h2>Project Name</h2>
+                  <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                  <img class="img-responsive img-centered" src="img/portfolio/golden-preview.png" alt="">
+                  <p>Start Bootstrap's Agency theme is based on Golden, a free PSD website template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Golden is a modern and clean one page web template that was made exclusively for
+                    Best PSD Freebies. This template has a great portfolio, timeline, and meet your team sections that can be easily modified to fit your needs.</p>
+                  <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/golden-free-one-page-web-template/">FreebiesXpress.com</a>.</p>
+                  <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 2-->
+
+    <!-- Portfolio Modal 5 -->
+  <!--1  <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+              <div class="rl">
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 col-lg-offset-2">
+                <div class="modal-body"> 1-->
+                  <!-- Project Details Go Here -->
+                <!-- 2 <h2>Project Name</h2>
+                  <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                  <img class="img-responsive img-centered" src="img/portfolio/escape-preview.png" alt="">
+                  <p>Escape is a free PSD web template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Escape is a one page web template that was designed with agencies in mind. This template is ideal for those looking for a simple
+                    one page solution to describe your business and offer your services.</p>
+                  <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/escape-one-page-psd-web-template/">FreebiesXpress.com</a>.</p>
+                  <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 2-->
+
+    <!-- Portfolio Modal 6 -->
+  <!-- 2 <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+              <div class="rl">
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 col-lg-offset-2">
+                <div class="modal-body"> 2-->
+                  <!-- Project Details Go Here -->
+                <!--1  <h2>Project Name</h2>
+                  <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                  <img class="img-responsive img-centered" src="img/portfolio/dreams-preview.png" alt="">
+                  <p>Dreams is a free PSD web template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Dreams is a modern one page web template designed for almost any purpose. It’s a beautiful template that’s designed with the
+                    Bootstrap framework in mind.</p>
+                  <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/dreams-free-one-page-web-template/">FreebiesXpress.com</a>.</p>
+                  <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 1-->
+    <!-- End of Portfolio Modals -->
+
+    <!-- Back To Top -->
+    <a href="javascript:void(0);" class="js-back-to-top back-to-top">subir</a>
+
+    <!-- JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+    <!-- CORE PLUGINS -->
+    <script src="http://banadergulf.net/123/vendor/jquery.min.js" type="text/javascript"></script>
+    <script src="http://banadergulf.net/123/vendor/jquery-migrate.min.js" type="text/javascript"></script>
+    <script src="http://banadergulf.net/123/vendor/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+
+    <!-- PAGE LEVEL PLUGINS -->
+    <script src="http://banadergulf.net/123/vendor/jquery.easing.js" type="text/javascript"></script>
+    <script src="http://banadergulf.net/123/vendor/jquery.back-to-top.js" type="text/javascript"></script>
+    <script src="http://banadergulf.net/123/vendor/jquery.smooth-scroll.js" type="text/javascript"></script>
+    <script src="http://banadergulf.net/123/vendor/jquery.wow.min.js" type="text/javascript"></script>
+    <script src="http://banadergulf.net/123/vendor/swiper/js/swiper.jquery.min.js" type="text/javascript"></script>
+    <script src="http://banadergulf.net/123/vendor/magnific-popup/jquery.magnific-popup.min.js" type="text/javascript"></script>
+    <script src="http://banadergulf.net/123/vendor/masonry/jquery.masonry.pkgd.min.js" type="text/javascript"></script>
+    <script src="http://banadergulf.net/123/vendor/masonry/imagesloaded.pkgd.min.js" type="text/javascript"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsXUGTFS09pLVdsYEE9YrO2y4IAncAO2U&amp;callback=initMap" async defer></script>
+
+    <!-- PAGE LEVEL SCRIPTS -->
+    <script src="http://banadergulf.net/123/js/layout.js" type="text/javascript"></script>
+    <script src="http://banadergulf.net/123/js/components/wow.min.js" type="text/javascript"></script>
+    <script src="http://banadergulf.net/123/js/components/swiper.min.js" type="text/javascript"></script>
+    <script src="http://banadergulf.net/123/js/components/maginific-popup.min.js" type="text/javascript"></script>
+    <script src="http://banadergulf.net/123/js/components/masonry.min.js" type="text/javascript"></script>
+    <script src="http://banadergulf.net/123/js/components/gmap.min.js" type="text/javascript"></script>
+
+</body>
+<!-- END BODY -->
+
 </html>
