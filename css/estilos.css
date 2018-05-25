@@ -113,6 +113,49 @@
     text-transform: uppercase;
     z-index: 3;
 }
+/*
+.imagendg{ */
+
+/*  background-image: url("detecciongas.png") no-repeat;*/
+/*  background-size: 100%;*/
+/*  width: 120%;*/
+/*
+  padding-top: 10px;
+  color: black;
+  height: 400px;
+  transition-duration: 1s;
+    background-position: center center;
+
+}
+.service .service-info .imagendg .imgdg{
+  margin-top: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-position: center center;
+  padding-top: 10px;
+  width: 180%
+  color: black;
+  height: 400px;
+  transition-duration: 1s;
+  z-index: 1; */
+/*  width: 300%;
+  height: 300px;
+  position: absolute;
+  background-size: cover;
+  margin-left: 0px;
+  padding-right: 650px;*/
+/*}*/
 .dark {
     border-color: #17bed2;
 }
@@ -126,10 +169,12 @@ hr {
 section {
   padding: 40px 0 20px 0 ;
 }
+/*
 #service .portfolio-item {
   margin: 0 0 15px;
   right: 0;
-}
+} */
+/*
 #service .portfolio-item .portfolio-link {
   display: block;
   position: relative;
@@ -185,16 +230,18 @@ section {
   font-size: 16px;
   margin: 0;
 }
+*/
+/*
 #portfolio * {
   z-index: 2;
 }
 #service * {
   z-index: 2;
-}
+} */
 @media (min-width: 767px) {
-  #service .portfolio-item {
+/*  #service .portfolio-item {
     margin: 0 0 30px;
-  }
+  }*/
 }
 .bg-light-gray {
     background-color: #eeeeee;
@@ -763,12 +810,14 @@ fieldset[disabled] .btn-theme {
   	[Service]
 ------------------------------------------------------------------*/
 .service {
-  background: #fff;
+/*  background: #fff;*/
   padding: 50px;
+  font-size: 18px;
+  text-align: center;
+  cursor: pointer;
 }
 
-.service .service-element,
-.service .service-info {
+.service .service-info, .overlay {
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
@@ -776,15 +825,16 @@ fieldset[disabled] .btn-theme {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);
 }
-
+/*
 .service .service-icon {
   display: block;
   font-size: 30px;
   color: #999caa;
   margin-bottom: 30px;
 }
-
-.service:hover .service-element {
+*/
+/*
+.service:hover .service-element, .overlay{
   opacity: 0;
   -webkit-transform: translate3d(0, -100%, 0);
   -moz-transform: translate3d(0, -100%, 0);
@@ -793,16 +843,51 @@ fieldset[disabled] .btn-theme {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);
 }
-
-.service:hover .service-info {
-  -webkit-transform: translate3d(0, -30%, 0);
-  -moz-transform: translate3d(0, -30%, 0);
-  transform: translate3d(0, -30%, 0);
+*/
+.service:hover .service-info, .overlay {
+  -webkit-transform: translate3d(0, -20%, 0);
+  -moz-transform: translate3d(0, -20%, 0);
+  transform: translate3d(0, -20%, 0);
   transition-duration: 300ms;
   transition-property: all;
   transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);
 }
+/*modificable para imagen del cada elemento*/
+.service-info .overlay1{
+  margin-top: 0px;
+  background-size: cover;
+ display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 20px;
+  color: #fff;
+  position: relative;
+/*  width: 120%;
+  height: 200px;*/
+  height: 100%;
+  width: 100%;
+  background: black;
+  opacity: 0.5;
+  visibility: hidden;
+  z-index: 200;
+}
+.service:hover .overlay1{
 
+  visibility: visible;
+}
+.service:hover{
+  background-size: 150%;
+}
 /*------------------------------------------------------------------
   	[Work]
 ------------------------------------------------------------------*/
@@ -979,7 +1064,7 @@ header nav .navbar{position:relative;min-height:150px;margin-bottom:20px;border:
   padding: 0;
   margin: 35px 0;
 }
-
+/*modificable icono de menu*/
 .header .navbar-toggle .toggle-icon {
   position: relative;
   width: 21px;
@@ -991,11 +1076,11 @@ header nav .navbar{position:relative;min-height:150px;margin-bottom:20px;border:
   transition-property: all;
   transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);
 }
-
+/*modificable icono de menu*/
 .header .navbar-toggle .toggle-icon:before, .header .navbar-toggle .toggle-icon:after {
   position: absolute;
-  left: 0;
-  background: white;
+  left: 0;/*
+  background: white;*/
   content: " ";
 }
 
@@ -1465,6 +1550,10 @@ header nav .navbar{position:relative;min-height:150px;margin-bottom:20px;border:
   color: #17bed2 !important;
 }
 
+.color-black{
+  color: black !important;
+}
+
 .color-white {
   color: #fff !important;
 }
@@ -1493,7 +1582,29 @@ header nav .navbar{position:relative;min-height:150px;margin-bottom:20px;border:
   	[Background Colors]
 ------------------------------------------------------------------*/
 .bg-color-base {
-  background: #17bed2 !important;
+  background-image: url("https://raw.githubusercontent.com/Ing-Anyeliz/Web1/master/detecciongas.png");
+  background-size: cover;
+  height: 580px;
+  width: 100%;
+  z-index: 500;
+  position:relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-position: center center;
+  transition-duration: 1s;
+  margin-left: 0 50px 0 50px;
+/*  background: #17bed2 !important;*/
 }
 
 .bg-color-white {
