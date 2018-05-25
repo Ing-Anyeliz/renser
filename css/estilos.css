@@ -93,7 +93,7 @@
 /*titulo de productos primer elemento del body*/
 .section-title .section-title-body .head-title {
     color: #343434;
-    font-family: "Raleway",sans-serif;
+    font-family: "Helvetica Neue",Arial,sans-serif;
     font-size: 50px;
     letter-spacing: 5px;
     line-height: 70px;
@@ -105,13 +105,17 @@
 .section-title .section-title-body .head-text {
     color: rgba(30, 28, 28, 0.7);
     /*color: rgba(255, 255, 255, 0.7);*/
-    font-family: "Raleway",sans-serif;
+    font-family: "Helvetica Neue",Arial,sans-serif;
     font-size: 14px;
     letter-spacing: 1px;
     margin: 0 0 20px;
     text-align: center;
     text-transform: uppercase;
     z-index: 3;
+}
+.matenimiento{
+  background: url("http://www.panatec-agua.com/calibracion/calibracion-detector-gases.jpg") no-repeat;
+  background-size: cover;
 }
 /*
 .imagendg{ */
@@ -161,7 +165,7 @@
 }
 hr {
     border-width: 3px;
-    max-width: 50px;
+    max-width: 100px;
 }
 /*setion title ending*/
 
@@ -283,7 +287,72 @@ section {
   text-align: center;
   max-width: 400px;
   margin: 0 auto;
-  background-color: white;
+  /*background-color: white;*/
+  background: url("http://www.panatec-agua.com/calibracion/calibracion-detector-gases.jpg") no-repeat;
+  background-size: cover;
+  text-align: center;
+  padding: 25px;
+
+}
+
+.portfolio-captioncae{
+
+  text-align: center;
+  max-width: 400px;
+  margin: 0 auto;
+  /*background-color: white;*/
+  background: url("http://www.pgcapacitacion.com/wp-content/uploads/Atmoferas.jpg") no-repeat;
+  background-size: cover;
+  text-align: center;
+  padding: 25px;
+
+}
+
+.portfolio-captionaasi{
+
+  text-align: center;
+  max-width: 400px;
+  margin: 0 auto;
+  /*background-color: white;*/
+  background: url("https://raw.githubusercontent.com/Ing-Anyeliz/Web1/master/servicioasesoramiento.png") no-repeat;
+  background-size: cover;
+  text-align: center;
+  padding: 25px;
+
+}
+
+.portfolio-captioncear{
+
+  text-align: center;
+  max-width: 400px;
+  margin: 0 auto;
+  /*background-color: white;*/
+  background: url("http://grupoinfra.com/sites/default/files/banner-mascarillas-cartuchos.jpg") no-repeat;
+  background-size: cover;
+  text-align: center;
+  padding: 25px;
+
+}
+.portfolio-captionssmaa{
+
+  text-align: center;
+  max-width: 400px;
+  margin: 0 auto;
+  /*background-color: white;*/
+  background: url("https://raw.githubusercontent.com/Ing-Anyeliz/Web1/master/serviciossupervicion.png") no-repeat;
+  background-size: cover;
+  text-align: center;
+  padding: 25px;
+
+}
+.portfolio-captionamsdg{
+
+  text-align: center;
+  max-width: 400px;
+  margin: 0 auto;
+  /*background-color: white;*/
+  background: url("https://raw.githubusercontent.com/Ing-Anyeliz/Web1/master/serviciosasersoriasistemadegases.png") no-repeat;
+  background-size: cover;
   text-align: center;
   padding: 25px;
 
@@ -737,11 +806,14 @@ fieldset[disabled] .btn-theme {
   position: relative;
   z-index: 1;
   text-align: center;
-  background: url(../img/1920x1080/02.jpg) no-repeat;
+  /*background: url(../img/1920x1080/02.jpg) no-repeat;*/
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
   min-height: 100%;
+}
+.promo-banner ul{
+  text-align: justify;
 }
 
 .promo-banner:before {
@@ -791,13 +863,13 @@ fieldset[disabled] .btn-theme {
 }
 
 .promo-block .promo-block-title {
-  font-size: 70px;
+  font-size: 40px;
   color: #fff;
 }
 
 @media (max-width: 480px) {
   .promo-block .promo-block-title {
-    font-size: 50px;
+    font-size: 30px;
   }
 }
 
@@ -809,12 +881,14 @@ fieldset[disabled] .btn-theme {
 /*------------------------------------------------------------------
   	[Service]
 ------------------------------------------------------------------*/
+/*modificable espcio entre los items*/
 .service {
 /*  background: #fff;*/
-  padding: 50px;
+  padding: 10px;
   font-size: 18px;
   text-align: center;
   cursor: pointer;
+  margin-bottom: 10px;
 }
 
 .service .service-info, .overlay {
@@ -845,19 +919,20 @@ fieldset[disabled] .btn-theme {
 }
 */
 .service:hover .service-info, .overlay {
-  -webkit-transform: translate3d(0, -30%, 0);
-  -moz-transform: translate3d(0, -30%, 0);
-  transform: translate3d(0, -30%, 0);
+  -webkit-transform: translate3d(0, -10%, 0);
+  -moz-transform: translate3d(0, -10%, 0);
+  transform: translate3d(0, -10%, 0);
   transition-duration: 300ms;
   transition-property: all;
   transition-timing-function: cubic-bezier(0.7, 1, 0.7, 1);
 }
 /*modificable para imagen del cada elemento*/
-.overlay{
+.service-info .overlay1{
   margin-top: 0px;
-/*  display: -webkit-box;
+  background-size: cover;
+ display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;*/
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -868,17 +943,19 @@ fieldset[disabled] .btn-theme {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-/*  font-size: 20px;*/
+  font-size: 20px;
   color: #fff;
   position: relative;
-  width: 120%;
-  height: 200px;
+/*  width: 120%;
+  height: 200px;*/
+  height: 100%;
+  width: 100%;
   background: black;
-  opacity: 0.6;
+  opacity: 0.5;
   visibility: hidden;
-  z-index: 500;
+  z-index: 200;
 }
-.service:hover .overlay{
+.service:hover .overlay1{
 
   visibility: visible;
 }
@@ -1076,8 +1153,8 @@ header nav .navbar{position:relative;min-height:150px;margin-bottom:20px;border:
 /*modificable icono de menu*/
 .header .navbar-toggle .toggle-icon:before, .header .navbar-toggle .toggle-icon:after {
   position: absolute;
-  left: 0;/*
-  background: white;*/
+  left: 0;
+  background: black;
   content: " ";
 }
 
@@ -1291,6 +1368,7 @@ header nav .navbar{position:relative;min-height:150px;margin-bottom:20px;border:
     position: absolute;
     top: 19px;
   }
+
 }
 
 
@@ -1547,6 +1625,10 @@ header nav .navbar{position:relative;min-height:150px;margin-bottom:20px;border:
   color: #17bed2 !important;
 }
 
+.color-black{
+  color: black !important;
+}
+
 .color-white {
   color: #fff !important;
 }
@@ -1575,10 +1657,155 @@ header nav .navbar{position:relative;min-height:150px;margin-bottom:20px;border:
   	[Background Colors]
 ------------------------------------------------------------------*/
 .bg-color-base {
- background-image: url("https://raw.githubusercontent.com/Ing-Anyeliz/Web1/master/detecciongas.png");
+  background-image: url("https://raw.githubusercontent.com/Ing-Anyeliz/Web1/master/elementosdeproteccion.png");
+  background-size: cover;
+  height: 580px;
+  width: 100%;
+  z-index: 500;
+  position:relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-position: center center;
+  transition-duration: 1s;
+  margin-left: 0 10px 0 10px;
 /*  background: #17bed2 !important;*/
 }
-
+.bg-color-basedg {
+  background-image: url("https://raw.githubusercontent.com/Ing-Anyeliz/Web1/master/detecciongas.png");
+  background-size: cover;
+  height: 580px;
+  width: 100%;
+  z-index: 500;
+  position:relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-position: center center;
+  transition-duration: 1s;
+  margin-left: 0 50px 0 50px;
+/*  background: #17bed2 !important;*/
+}
+.bg-color-basepa {
+  background-image: url("https://raw.githubusercontent.com/Ing-Anyeliz/Web1/master/ptoteccion_alturas.png");
+  background-size: cover;
+  height: 580px;
+  width: 100%;
+  z-index: 500;
+  position:relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-position: center center;
+  transition-duration: 1s;
+  margin-left: 0 50px 0 50px;
+/*  background: #17bed2 !important;*/
+}
+.bg-color-basepr {
+  background-image: url("https://raw.githubusercontent.com/Ing-Anyeliz/Web1/master/proteccionrespiratoria.png");
+  background-size: cover;
+  height: 580px;
+  width: 100%;
+  z-index: 500;
+  position:relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-position: center center;
+  transition-duration: 1s;
+  margin-left: 0 50px 0 50px;
+/*  background: #17bed2 !important;*/
+}
+.bg-color-baseevm {
+  background-image: url("https://raw.githubusercontent.com/Ing-Anyeliz/Web1/master/medicion.png");
+  background-size: cover;
+  height: 580px;
+  width: 100%;
+  z-index: 500;
+  position:relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-position: center center;
+  transition-duration: 1s;
+  margin-left: 0 50px 0 50px;
+/*  background: #17bed2 !important;*/
+}
+.bg-color-baseeedi {
+  background-image: url("https://raw.githubusercontent.com/Ing-Anyeliz/Web1/master/extincion.png");
+  background-size: cover;
+  height: 580px;
+  width: 100%;
+  z-index: 500;
+  position:relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-position: center center;
+  transition-duration: 1s;
+  margin-left: 0 50px 0 50px;
+/*  background: #17bed2 !important;*/
+}
 .bg-color-white {
   background: #fff !important;
 }
@@ -1683,10 +1910,10 @@ header nav .navbar{position:relative;min-height:150px;margin-bottom:20px;border:
   padding-top: 80px;
   padding-bottom: 80px;
 }
-
+/*modificable productos*/
 .content-lg {
   padding-top: 100px;
-  padding-bottom: 100px;
+  padding-bottom: 10px;
 }
 
 /*------------------------------------------------------------------
