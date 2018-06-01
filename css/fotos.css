@@ -1,0 +1,119 @@
+.promo-block image-slider div img {
+  top: 0px;
+  margin-top: 0px;
+	background-position: center center;
+
+}
+
+.fade-enter-active, .fade-leave-active {
+
+	text-align: center;
+	width: auto;
+	left: 0;
+	right: 0;
+	background-size: cover;
+  transition: all 1s ease;
+  overflow: hidden;
+  visibility: visible;
+  opacity: 1;
+  position: absolute;
+	padding: 0px 0px 1000px;
+
+	background-position: center center;
+
+}
+.fade-enter, .fade-leave-to {
+	text-align: center;
+	width: auto;
+	left: 0;
+	right: 0;
+	background-size: cover;
+background-position: center center;
+	opacity: 0;
+  visibility: hidden;
+	position: absolute;
+	padding: 0px 0px 1000px;
+	width: 100%;
+}
+.centerbanners{
+	text-align: center;
+	width: auto;
+	left: 0;
+	right: 0;
+	background-size: cover;
+background-position: center center;
+margin: 0 0 20px;
+position: absolute;
+padding: 0px 0px 1000px;
+width: 100%;
+
+}
+@media (max-width: 768px) {
+	.centerbanners{
+		text-align: center;
+		width: auto;
+		left: 0;
+		right: 0;
+		background-size: cover;
+	background-position: center center;
+	margin: 50px 0 0px;
+	position: absolute;
+	padding: 0px 0px 0px;
+	width: 100%;
+
+	}
+	.promo-block image-slider div img {
+	  top: 0px;
+	  margin-top: 0px;
+		background-position: center center;
+
+	}
+
+	.fade-enter-active, .fade-leave-active {
+
+		text-align: center;
+		width: auto;
+		left: 0;
+		right: 0;
+		background-size: cover;
+	  transition: all 1s ease;
+	  overflow: hidden;
+	  visibility: visible;
+	  opacity: 1;
+	  position: absolute;
+		padding: 0px 0px 0px;
+
+		background-position: center center;
+
+	}
+	.fade-enter, .fade-leave-to {
+		text-align: center;
+		width: auto;
+		left: 0;
+		right: 0;
+		background-size: cover;
+	background-position: center center;
+		opacity: 0;
+	  visibility: hidden;
+		position: absolute;
+		padding: 0px 0px 0px;
+		width: 100%;
+	}
+	.promo-block{
+
+		  position: relative;
+		  z-index: 1;
+		  text-align: center;
+		  /*background: url(http://camaradelpacifico.org/tl_files/Casos%20Exito/RENSER%20COLOMBIA/RENSER%20BANER.jpg) no-repeat;
+		  */background-size: cover;
+		  background-position: center center;
+		  /*padding: 250px 0 200px;*/
+		  padding: 0px 0px 0px;
+		}
+		.promo-block .promo-block-title {
+			margin-top: 100px;
+		  font-size: 20px;
+		  color: #fff;
+
+		}
+}

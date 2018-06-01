@@ -847,27 +847,39 @@ fieldset[disabled] .btn-theme {
   position: relative;
   z-index: 1;
   text-align: center;
-  background: url(http://camaradelpacifico.org/tl_files/Casos%20Exito/RENSER%20COLOMBIA/RENSER%20BANER.jpg) no-repeat;
-  background-size: cover;
+  /*background: url(http://camaradelpacifico.org/tl_files/Casos%20Exito/RENSER%20COLOMBIA/RENSER%20BANER.jpg) no-repeat;
+  */background-size: cover;
   background-position: center center;
-  padding: 250px 0 200px;
+  /*padding: 250px 0 200px;*/
+  padding: 0px 0px 230px;
 }
+
 
 .promo-block:before {
   position: absolute;
   top: 0;
   left: 0;
+  margin-top: -100px;
   width: 100%;
-  height: 100%;
+  height: 100%
   z-index: -1;
 /*  background: rgba(81, 87, 105, 0.4);*/
 background: rgba(50, 50, 50, 0.4);
-  content: " ";
+ content: " ";
 }
 
 .promo-block .promo-block-title {
   font-size: 30px;
   color: #fff;
+
+
+}
+.promo-block .promo-block-title1{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 30px;
+  color: #fff;
+  background: rgba(50, 50, 50, 0.7);
 }
 
 @media (max-width: 480px) {
