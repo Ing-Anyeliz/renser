@@ -1,0 +1,36 @@
+.promo-block image-slider div img {
+  top: 0px;
+  max-width: 1000px;
+  margin-top: 0px;
+}
+.fade-enter-active, .fade-leave-active {
+  position: relative;
+
+  text-align: center;
+  /*background: url(http://camaradelpacifico.org/tl_files/Casos%20Exito/RENSER%20COLOMBIA/RENSER%20BANER.jpg) no-repeat;
+  */background-size: cover;
+  left: 0;
+  right: 0;
+  background-position: center center;
+  /*padding: 250px 0 200px;*/
+  padding: 0px 0px 200px;
+  transition: all 4s ease;
+  overflow: hidden;
+  visibility: visible;
+  opacity: 1;
+}
+.fade-enter, .fade-leave-to {
+  position: relative;
+  text-align: center;
+  /*background: url(http://camaradelpacifico.org/tl_files/Casos%20Exito/RENSER%20COLOMBIA/RENSER%20BANER.jpg) no-repeat;
+  */
+  width: auto;
+  left: 0;
+  right: 0;
+  background-size: cover;
+  background-position: center center;
+  /*padding: 250px 0 200px;*/
+  padding: 0px 0px 200px;
+  opacity: 1;
+  visibility: hidden;
+}
