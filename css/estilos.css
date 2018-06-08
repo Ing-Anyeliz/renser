@@ -61,6 +61,18 @@
         top: 20%
     }
 }
+/*Service*/
+.section-heading {
+  color: #343434;
+  font-family: "Helvetica Neue",Arial,sans-serif;
+  font-size: 40px;
+  letter-spacing: 3px;
+  line-height: 70px;
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+
+}
 
 /*end of mouse scrolling header */
 /*Seccion de productos primer elemento*/
@@ -94,14 +106,15 @@
 .section-title .section-title-body .head-title {
     color: #343434;
     font-family: "Helvetica Neue",Arial,sans-serif;
-    font-size: 50px;
-    letter-spacing: 5px;
+    font-size: 40px;
+    letter-spacing: 3px;
     line-height: 70px;
     margin: 0;
     padding: 0 0 15px;
     text-align: center;
     text-transform: uppercase;
 }
+
 .section-title .section-title-body .head-text {
     color: rgba(30, 28, 28, 0.7);
     /*color: rgba(255, 255, 255, 0.7);*/
@@ -162,10 +175,12 @@
 /*}*/
 .dark {
     border-color: #17bed2;
+
 }
 hr {
     border-width: 3px;
     max-width: 100px;
+
 }
 /*setion title ending*/
 
@@ -249,7 +264,8 @@ section {
 }
 .bg-light-gray {
     background-color: #eeeeee;
-    background-image: url("../img/fos.png");
+    /*
+    background-image: url("../img/fos.png");*/
 }
 .gallery-title
 {
@@ -284,8 +300,8 @@ section {
 
 .portfolio-caption {
 
-  text-align: center;
-  max-width: 400px;
+  text-align: center;/*
+  max-width: 400px;*/
   margin: 0 auto;
   /*background-color: white;*/
   background: url("http://www.panatec-agua.com/calibracion/calibracion-detector-gases.jpg") no-repeat;
@@ -297,8 +313,8 @@ section {
 
 .portfolio-captioncae{
 
-  text-align: center;
-  max-width: 400px;
+  text-align: center;/*
+  max-width: 400px;*/
   margin: 0 auto;
   /*background-color: white;*/
   background: url("http://www.pgcapacitacion.com/wp-content/uploads/Atmoferas.jpg") no-repeat;
@@ -311,7 +327,7 @@ section {
 .portfolio-captionaasi{
 
   text-align: center;
-  max-width: 400px;
+  /*max-width: 400px;*/
   margin: 0 auto;
   /*background-color: white;*/
   background: url("https://raw.githubusercontent.com/Ing-Anyeliz/Web1/master/servicioasesoramiento.png") no-repeat;
@@ -324,7 +340,7 @@ section {
 .portfolio-captioncear{
 
   text-align: center;
-  max-width: 400px;
+/*  max-width: 400px;*/
   margin: 0 auto;
   /*background-color: white;*/
   background: url("http://grupoinfra.com/sites/default/files/banner-mascarillas-cartuchos.jpg") no-repeat;
@@ -336,19 +352,20 @@ section {
 .portfolio-captionssmaa{
 
   text-align: center;
-  max-width: 400px;
+  /*max-width: 400px;*/
   margin: 0 auto;
   /*background-color: white;*/
   background: url("https://raw.githubusercontent.com/Ing-Anyeliz/Web1/master/serviciossupervicion.png") no-repeat;
   background-size: cover;
-  text-align: center;
-  padding: 25px;
-
+  text-align: center;/*
+  padding: 25px;*/
+  padding-top: 24px;
+  padding-bottom: 25px;
 }
 .portfolio-captionamsdg{
 
   text-align: center;
-  max-width: 400px;
+  /*max-width: 400px;*/
   margin: 0 auto;
   /*background-color: white;*/
   background: url("https://raw.githubusercontent.com/Ing-Anyeliz/Web1/master/serviciosasersoriasistemadegases.png") no-repeat;
@@ -485,6 +502,17 @@ p {
   font-size: 15px;
   font-weight: 400;
   font-family: Hind, sans-serif;
+  color: #a6a7aa;
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+
+/*items de valores*/
+.itemli{
+  list-style:circle;
+  font-family: Hind, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
   color: #a6a7aa;
   line-height: 1.4;
   margin-bottom: 15px;
@@ -843,6 +871,7 @@ fieldset[disabled] .btn-theme {
 /*------------------------------------------------------------------
   	[Promo Block]
 ------------------------------------------------------------------*/
+
 .promo-block {
   position: relative;
   z-index: 1;
@@ -966,7 +995,7 @@ background: rgba(50, 50, 50, 0.4);
   height: 100%;
   width: 100%;
   background: black;
-  opacity: 0.5;
+  opacity: 0.7;
   visibility: hidden;
   z-index: 200;
 }
@@ -1124,6 +1153,13 @@ background: rgba(50, 50, 50, 0.4);
 .footer{
   background-color: #383838;
 }
+
+.separation a{
+  margin-right: 20px;
+
+}
+
+
 
 /*------------------------------------------------------------------
 
@@ -1837,10 +1873,11 @@ header nav .navbar{position:relative;min-height:150px;margin-bottom:20px;border:
   position: relative;
   z-index: 1;
   text-align: center;
+  /*
   background: url(http://camaradelpacifico.org/tl_files/Casos%20Exito/RENSER%20COLOMBIA/RENSER%20BANER.jpg);
-  background-size: cover;
+  */background-size: cover;
   background-position: center center;
-  padding: 200px 0 200px;
+  padding: 200px 0 120px;
 
 }
 
@@ -1854,9 +1891,27 @@ header nav .navbar{position:relative;min-height:150px;margin-bottom:20px;border:
   content: " ";
 }
 .promo-block1 .promo-block-title1{
+
+  letter-spacing: 1.5px;
+  padding-top: 0px;
+  padding-bottom: 10px;
   font-size: 30px;
-  color: white;
+  color: #fff;
+  background: rgba(50, 50, 50, 0.7);
+  margin-top: -250px;
+  line-height: 50px;
+
+}
+
+.promo-block1 .promo-block-title2{
   letter-spacing: 1px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 30px;
+  color: #fff;
+  background: rgba(50, 50, 50, 0.7);
+  line-height: 1.1;
+  letter-spacing: 1.5px;
 
 }
 
@@ -1870,7 +1925,1032 @@ header nav .navbar{position:relative;min-height:150px;margin-bottom:20px;border:
   font-size: 20px;
   color: #17bed2;
 }
+@media (max-width:1100px){
+  .promo-block1{
+    position: relative;
+    z-index:1;
+    text-align: center;
+    background-size: cover;
+    background-position:center center;
+    padding-top: 200px;
+    padding-bottom: 2%;
+  }
+  .promo-block1 .promo-block-title1 {
+  font-size: 20px;
+  color: white;
+  }
 
+  .promo-block1 .promo-block-title2{
+    font-size:20px;
+    color: white;
+
+  }
+
+}
+@media (max-width:940px){
+  .promo-block1{
+    position: relative;
+    z-index:1;
+    text-align: center;
+    background-size: cover;
+    background-position:center center;
+    padding-top: 200px;
+    padding-bottom: 1px;
+  }
+  .promo-block1 .promo-block-title1 {
+  font-size: 20px;
+  color: white;
+  }
+
+  .promo-block1 .promo-block-title2{
+    font-size:20px;
+    color: white;
+
+  }
+
+}
+@media (max-width:900px){
+  .promo-block1{
+    position: relative;
+    z-index:1;
+    text-align: center;
+    background-size: cover;
+    background-position:center center;
+    padding-top: 160px;
+    padding-bottom: 1px;
+  }
+  .promo-block1 .promo-block-title1 {
+  font-size: 18px;
+  color: white;
+  }
+
+  .promo-block1 .promo-block-title2{
+    font-size:18px;
+    color: white;
+
+  }
+
+}
+@media (max-width:825px){
+  .promo-block1{
+    position: relative;
+    z-index:1;
+    text-align: center;
+    background-size: cover;
+    background-position:center center;
+    padding-top: 140px;
+    padding-bottom: 0px;
+  }
+  .promo-block1 .promo-block-title1 {
+  font-size: 18px;
+  color: white;
+  }
+
+  .promo-block1 .promo-block-title2{
+    font-size:18px;
+    color: white;
+
+  }
+
+}
+@media (max-width:790px){
+  .promo-block1{
+    position: relative;
+    z-index:1;
+    text-align: center;
+    background-size: cover;
+    background-position:center center;
+    padding-top: 130px;
+    padding-bottom: 0px;
+
+  }
+  .promo-block1 .promo-block-title1 {
+  font-size: 18px;
+  color: white;
+  }
+
+  .promo-block1 .promo-block-title2{
+    font-size:18px;
+    color: white;
+
+  }
+  .title-us{
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+}
+@media (max-width:780px){
+  .promo-block1{
+    position: relative;
+    z-index:1;
+    text-align: center;
+    background-size: cover;
+    background-position:center center;
+    padding-top: 120px;
+    padding-bottom: 0px;
+
+  }
+  .promo-block1 .promo-block-title1 {
+  font-size: 18px;
+  color: white;
+  }
+
+  .promo-block1 .promo-block-title2{
+    font-size:18px;
+    color: white;
+
+  }
+
+}
+
+@media (max-width:770px){
+  .promo-block1{
+    position: relative;
+    z-index:1;
+    text-align: center;
+    background-size: cover;
+    background-position:center center;
+    padding-top: 120px;
+    padding-bottom: 40px;
+
+  }
+  .promo-block1 .promo-block-title1 {
+  font-size: 18px;
+  color: white;
+  }
+
+  .promo-block1 .promo-block-title2{
+    font-size:18px;
+    color: white;
+
+  }
+
+}
+@media (max-width:768px){
+  .promo-block1{
+    position: relative;
+    z-index:1;
+    text-align: center;
+    background-size: cover;
+    background-position:center center;
+    padding-top: 400px;
+    padding-bottom: 10px;
+
+  }
+  .promo-block1 .promo-block-title1 {
+  font-size: 18px;
+  color: white;
+  }
+
+  .promo-block1 .promo-block-title2{
+    font-size:18px;
+    color: white;
+
+  }
+
+  .portfolio-captionamsdg{
+
+    text-align: center;
+    margin: 0 auto;
+    background-size: cover;
+    text-align: center;
+    /*
+    padding: 25px;*/
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background-position: center center;
+
+  }
+
+}
+@media (max-width:640px){
+  .promo-block1{
+    position: relative;
+    z-index:1;
+    text-align: center;
+    background-size: cover;
+    background-position:center center;
+    padding-top: 350px;
+    padding-bottom: 0px;
+    line-height: 0px;
+
+  }
+  .promo-block1 .promo-block-title1 {
+  font-size: 18px;
+  color: white;
+  }
+
+  .promo-block1 .promo-block-title2{
+    font-size:18px;
+    color: white;
+
+
+  }
+  .portfolio-captionaasi{
+
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    background-size: cover;
+    text-align: center;
+    padding-left: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background-position: center center;
+
+  }
+  .portfolio-caption{
+
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    background-size: cover;
+    text-align: center;
+    padding-left: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background-position: center center;
+
+  }
+  .portfolio-captioncae{
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    background-size: cover;
+    text-align: center;
+    padding-left: 10px;/*
+    padding-right: 10px;
+    padding-bottom: 20px;*/
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background-position: center center;
+
+  }
+  .portfolio-captionssmaa{
+
+    text-align: center;
+    /*max-width: 400px;*/
+    margin: 0 auto;
+    /*background-color: white;*/
+    background-size: cover;
+    text-align: center;/*
+    padding: 25px;*/
+    padding-top: 24px;
+    padding-bottom: 25px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background-position: center center;
+  }
+  .portfolio-captionamsdg{
+
+    text-align: center;
+    margin: 0 auto;
+    background-size: cover;
+    text-align: center;
+    /*
+    padding: 25px;*/
+    padding-top: 20px;
+    padding-bottom: 24px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background-position: center center;
+
+  }
+  .portfolio-captioncear{
+
+    text-align: center;
+  /*  max-width: 400px;*/
+    margin: 0 auto;
+    background-size: cover;
+    text-align: center;
+    padding: 25px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background-position: center center;
+
+  }
+
+}
+@media (max-width:600px){
+
+  .portfolio-captionaasi{
+
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    background-size: cover;
+    text-align: center;
+    padding-right: 10px;
+    padding-left: 10px;
+    /*padding-top: 20px;*/
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background-position: center center;
+
+  }
+  .portfolio-caption{
+
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    background-size: cover;
+    text-align: center;
+    padding-right: 5px;
+    padding-left:5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background-position: center center;
+
+  }
+  .portfolio-captioncear{
+
+    text-align: center;
+  /*  max-width: 400px;*/
+    margin: 0 auto;
+    background-size: cover;
+    text-align: center;
+    padding: 25px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background-position: center center;
+
+  }
+  .portfolio-captioncae{
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    background-size: cover;
+    text-align: center;
+    padding-left: 10px;
+    /*padding-right: 10px;
+    padding-bottom: 20px;*/
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background-position: center center;
+
+  }
+
+}
+
+@media (max-width: 580px) {
+
+  .portfolio-caption{
+
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    background-size: cover;
+    text-align: center;
+    padding-left: 10px;/*
+    padding-right: 10px;
+      padding-top: 18px;
+      padding-bottom: 15px;*/
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background-position: center center;
+
+  }
+
+  .portfolio-captioncae{
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    background-size: cover;
+    text-align: center;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 28px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background-position: center center;
+
+  }
+
+  .portfolio-captionaasi{
+
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    background-size: cover;
+    text-align: center;
+   padding-right: 10px;
+     padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background-position: center center;
+
+  }
+  .portfolio-captioncear{
+
+    text-align: center;
+  /*  max-width: 400px;*/
+    margin: 0 auto;
+    background-size: cover;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background-position: center center;
+
+  }
+}
+@media (max-width: 570px) {
+
+  .portfolio-captionaasi{
+
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    background-size: cover;
+    text-align: center;
+   padding-right: 10px;
+     padding-top: 20px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background-position: center center;
+
+  }
+
+}
+@media (max-width: 560px){
+
+  .portfolio-captionaasi{
+
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    background-size: cover;
+    text-align: center;
+    padding-right: 10px;
+    padding-top: 12px;
+    padding-bottom: 18px;
+    padding-left: 10px;
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background-position: center center;
+
+  }
+
+
+}
+
+@media (max-width:550px) {
+
+
+    .portfolio-caption{
+
+      text-align: center;
+      width: 100%;
+      margin: 0 auto;
+      background-size: cover;
+      text-align: center;
+      padding-left: 10px;
+      padding-right: 10px;
+        padding-top: 18px;
+        padding-bottom: 15px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      background-position: center center;
+
+    }
+
+    .portfolio-captionaasi{
+
+      text-align: center;
+      width: 100%;
+      margin: 0 auto;
+      background-size: cover;
+      text-align: center;
+      padding-right: 10px;
+      padding-top: 20px;
+      padding-bottom: 10px;
+      padding-left: 10px;
+
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      background-position: center center;
+
+    }
+
+    .head-title .contacto-title{
+        color: #343434;
+        font-family: "Helvetica Neue",Arial,sans-serif;
+        font-size: 20px;
+        letter-spacing: 1px;
+        line-height: 70px;
+        margin: 0;
+        padding: 0 0 15px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+}
+@media (max-width:470px){
+  .promo-block1{
+    position: relative;
+    z-index:1;
+    text-align: center;
+    background-size: cover;
+    background-position:center center;
+    padding-top: 350px;
+    padding-bottom: 0px;
+    line-height: 0px;
+
+  }
+  .promo-block1 .promo-block-title1 {
+  font-size: 18px;
+  color: white;
+  padding-bottom: 0px;
+  }
+
+  .promo-block1 .promo-block-title2{
+    font-size:18px;
+    color: black;
+    background-color: white;
+
+
+  }
+  .portfolio-captionaasi{
+
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    background-size: cover;
+    text-align: center;
+    padding-right: 10px;
+    padding-top: 12px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background-position: center center;
+
+  }
+
+}
+@media (max-width:450px) {
+
+  .portfolio-captionaasi{
+
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    background-size: cover;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background-position: center center;
+
+  }
+
+
+}
+@media (max-width:400px){
+
+  .promo-block1{
+    position: relative;
+    z-index:1;
+    text-align: center;
+    background-size: cover;
+    background-position:center center;
+    padding-top: 550px;
+    padding-bottom: 0px;
+    line-height: 0px;
+
+  }
+  .promo-block1 .promo-block-title1 {
+  font-size: 18px;
+  color: black;
+  padding-bottom: 0px;
+  background-color: white;
+  }
+
+  .promo-block1 .promo-block-title2{
+    font-size:18px;
+    color: black;
+    background-color: white;
+
+
+  }
+
+  .section-title .section-title-body .head-title {
+      color: #343434;
+      font-family: "Helvetica Neue",Arial,sans-serif;
+      font-size: 40px;
+      letter-spacing: 1px;
+      line-height: 70px;
+      margin: 0;
+      padding: 0 0 15px;
+      text-align: center;
+      text-transform: uppercase;
+  }
+/*
+  .promo-banner .promo-banner-title {
+    font-size: 40px;
+    color: #fff;
+  }
+*/
+
+}
+@media (max-width:380px){
+
+  .promo-block1{
+    position: relative;
+    z-index:1;
+    text-align: center;
+    background-size: cover;
+    background-position:center center;
+    padding-top: 550px;
+    padding-bottom: 0px;
+    line-height: 0px;
+
+  }
+  .promo-block1 .promo-block-title1 {
+  font-size: 18px;
+  color: black;
+  padding-bottom: 0px;
+  background-color: white;
+  }
+
+  .promo-block1 .promo-block-title2{
+    font-size:18px;
+    color: black;
+    background-color: white;
+
+
+  }
+  .portfolio-caption{
+
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    background-size: cover;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background-position: center center;
+
+  }
+
+
+    .portfolio-captionaasi{
+
+      text-align: center;
+      width: 100%;
+      margin: 0 auto;
+      background-size: cover;
+      text-align: center;
+      padding-right: 10px;
+      padding-left: 10px;
+      padding-top: 10px;
+      padding-bottom: 15px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      background-position: center center;
+
+    }
+
+    .portfolio-captionamsdg{
+
+      text-align: center;
+      margin: 0 auto;
+      background-size: cover;
+      text-align: center;
+      /*
+      padding: 25px;*/
+      padding-top: 5px;
+      padding-bottom: 5px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      background-position: center center;
+
+    }
+
+    .portfolio-captionssmaa{
+
+      text-align: center;
+      /*max-width: 400px;*/
+      margin: 0 auto;
+      /*background-color: white;*/
+      background-size: cover;
+      text-align: center;/*
+      padding: 25px;*/
+      padding-top: 5px;
+      padding-bottom: 5px;
+      padding-left: 5px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      background-position: center center;
+    }
+    .section-title-body .title_responsive{
+
+  font-size: 35px !important;
+  letter-spacing: 1px !important;
+
+}
+.promo-banner .promo-banner-title {
+  font-size: 40px;
+  color: #fff;
+}
+}
+/*
 @media (max-width:480px) {
 
   .promo-block1 .promo-block-title1{
@@ -1889,11 +2969,85 @@ header nav .navbar{position:relative;min-height:150px;margin-bottom:20px;border:
       font-size: 100%;
       color: white;
     }
+
+    .promo-block1 .promo-block-title2{
+      font-size: 100%;
+      color: white;
+    }
     .promo-block1 .promo-block-title1 a{
       font-size: 100%;
       color: white;
     }
+}*/
+/*mensajes enviados al html*/
+.promo-block2 {
+  position: relative;
+ z-index: 1;
+ text-align: center;
+ background: url(http://camaradelpacifico.org/tl_files/Casos%20Exito/RENSER%20COLOMBIA/RENSER%20BANER.jpg);
+ background-size: cover;
+ background-position: center center;
+padding: 200px 0 200px;
 }
+
+
+.promo-block2:before{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  content: " ";
+}
+
+.promo-block2 .promo-block-title2{
+  font-size: 30px;
+  color: white;
+  letter-spacing: 1px;
+
+}
+
+.promo-block2 .promo-block-title2 a{
+  font-size: 20px;
+  color: white;
+}
+
+
+.promo-block2 .promo-block-title2 a:hover{
+  font-size: 20px;
+  color: #17bed2;
+}
+
+@media (max-width:480px) {
+
+  .promo-block2 .promo-block-title2{
+    font-size: 20px;
+    color: white;
+  }
+  .promo-block2 .promo-block-title2 a{
+    font-size: 15px;
+    color: white;
+  }
+
+}
+@media (max-width:350px) {
+
+    .promo-block2 .promo-block-title2{
+      font-size: 100%;
+      color: white;
+    }
+    .promo-block2 .promo-block-title2 a{
+      font-size: 100%;
+      color: white;
+    }
+}
+
+
+
+
+
+
 .bg-color-white {
   background: #fff !important;
 }
