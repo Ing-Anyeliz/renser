@@ -1,6 +1,6 @@
 <?php
 
-$destino = "anyelizrico@gmail.com";
+$destino = "ventas@rensercolombia.com.co";
 $empresa = $_POST['empresa'];
 $telefono = $_POST['telefono'];
 $nombrepc = $_POST['nombrepc'];
